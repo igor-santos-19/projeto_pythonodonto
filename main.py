@@ -1,6 +1,8 @@
 import requests
+import banco
 from tkinter import *
 
+banco.conexaoBanco()
 
 janelaPrincipal = Tk()
 janelaPrincipal.geometry("400x400")
@@ -16,7 +18,6 @@ Digitesuaidade.pack()
 
 
 def DadosPessoais():
-
     perguntaNome = Entry(Digiteseunome, textvariable='teste')
     perguntaNome.pack()
 
@@ -28,8 +29,7 @@ def DadosPessoais():
     
 
 
-def perguntasFormulario():
-    
+def perguntasFormulario():   
     pergunta01 = Label(janelaPrincipal, text='1) Pergunta numero  um sobre odonto selecione uma das respostas: ')
     pergunta01.pack()
     botaoRadio = Radiobutton(janelaPrincipal, text='resposta1', value='valorResposta1')
@@ -45,12 +45,11 @@ def perguntasFormulario():
     botaoRadio_4.pack()
 
 def botaoEnviaFormulario():
-    botaoTeste = Button(janelaPrincipal, text="Enviar respostas", cursor='watch')
+    botaoTeste = Button(janelaPrincipal, text="Enviar respostas")
     botaoTeste.pack()
 
 DadosPessoais()
 perguntasFormulario()
 botaoEnviaFormulario()
-
 janelaPrincipal.mainloop()
 
