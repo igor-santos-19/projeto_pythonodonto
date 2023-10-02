@@ -1,4 +1,5 @@
 import sqlite3
+import pandas as pd
 
 conexao = sqlite3.connect('odontodb')
 print('banco conectado sqlite', conexao)
@@ -50,4 +51,10 @@ def inseredentista(nome_dent, idade_dent, cpf_dent, telefone, obs_dent, especial
     conexao.commit()
 
 
+dados = pd.read_sql('SELECT * FROM dentista', conexao)
+idade = pd.read_sql('SELECT SUM(idade_dent) FROM dentista',conexao )
 
+mediaIdade = idade / 4
+
+print("As idade são ",dados)
+print("A media das idades é ", mediaIdade)

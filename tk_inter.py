@@ -41,5 +41,7 @@ def bt_botaoEnviarDados():
 
 botaoEnviarDados = Button(root, text='Enviar Dados', command = bt_botaoEnviarDados).pack()
 
+
+
 root.geometry("400x400")
 root.mainloop()
